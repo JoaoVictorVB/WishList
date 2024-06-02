@@ -1,0 +1,22 @@
+{
+  "name": "WishList",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JoaoVictorVB/WishList.git",
+  "author": "JoãovictorSC <jv140280@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "prisma": "^5.14.0",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "express": "^4.19.2"
+  }
+}

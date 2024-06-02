@@ -1,0 +1,10 @@
+services:
+  mysql:
+    container_name: nome_container
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: nomedatabase
+      MYSQL_ROOT_PASSWORD: senhadatabase
+    ports:
+      - suaporta:3306
