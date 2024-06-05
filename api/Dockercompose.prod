@@ -2,9 +2,13 @@ FROM node:lts
 
 WORKDIR /usr/src/app
 
-COPY package.json. RUN npm install
+COPY package.json .
 
-COPY..
+COPY package-lock.json .
+
+RUN npm ci
+
+COPY . .
 
 RUN npx prisma generate && npm run build
 
