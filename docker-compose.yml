@@ -14,7 +14,7 @@ services:
 
   app:
     build:
-      context:./api
+      context: ./api
     container_name: wishlist_api
     depends_on:
       - mysql
