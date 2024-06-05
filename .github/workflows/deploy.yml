@@ -1,41 +1,47 @@
 name: Push-to-EC2
+
 on:
+
   push:
+
     branches:
+
       - master
+
 jobs:
-  build:
-          runs-on: ubuntu-18.04
-          steps:
-              -   uses: actions/checkout@v1
-  
-              -   name: Setup SSH Keys and known_hosts
-                  env:
-                      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-                  run: |
-                      mkdir -p ~/.ssh
-                      ssh-keyscan github.com >> ~/.ssh/known_hosts
-                      ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-                      ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-  
-              -   name: Some task that fetches dependencies
-                  env:
-                      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-                  run: ./fetch-deps.sh
+
   deploy:
+
     name: Deploy to EC2
+
     runs-on: ubuntu-latest
 
+
+
+
     steps:
+
     - name: Checkout the files
+
       uses: actions/checkout@v3
 
+
+
+
     - name: Copy files with SSH
+
       uses: easingthemes/ssh-deploy@main
+
       env:
+
         SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
+
         SOURCE: "./"
+
         REMOTE_HOST: ${{secrets.REMOTE_HOST}}
+
         REMOTE_USER: ${{secrets.REMOTE_USER}}
+
         TARGET: "/home/unbutu"
+
         EXCLUDE: " /node_modules/,"
