@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = "mysql://root:root@54.94.49.54:3306/wishlist"
+  url      = "mysql://root:root@52.67.190.228:3306/wishlist"
 }
 
 model Note {
