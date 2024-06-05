@@ -15,7 +15,7 @@ services:
   app:
     build:
       context: ./api
-      dockerfile: dockercompose
+      dockerfile: Dockercompose.prod
     container_name: wishlist_api
     depends_on:
       - mysql
