@@ -15,12 +15,12 @@ services:
   app:
     build:
       context: ./api
-      dockerfile: docker-compose
+      dockerfile: dockercompose
     container_name: wishlist_api
     depends_on:
       - mysql
     ports:
-      - "9002:3000"
+      - "3000"
     environment:
       DATABASE_HOST: mysql
       DATABASE_USER: root
