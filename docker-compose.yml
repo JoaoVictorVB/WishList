@@ -13,19 +13,18 @@ services:
       - db_data:/var/lib/mysql
 
   app:
-  build:
-    context: ./api
-    dockerfile: Dockerfile
-  container_name: wishlist_api
-  depends_on:
-    - mysql
-  ports:
-    - "9002:3000"
-  environment:
-    DATABASE_HOST: mysql
-    DATABASE_USER: root
-    DATABASE_PASSWORD: root
-    DATABASE_NAME: wishlist
+    build:
+      context:./api
+    container_name: wishlist_api
+    depends_on:
+      - mysql
+    ports:
+      - "9002:3000"
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_USER: root
+      DATABASE_PASSWORD: root
+      DATABASE_NAME: wishlist
 
 volumes:
   db_data:
