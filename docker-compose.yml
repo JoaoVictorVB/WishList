@@ -1,0 +1,10 @@
+services:
+  mysql:
+    container_name: wishlist_api
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: wishlist
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306

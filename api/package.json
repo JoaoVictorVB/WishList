@@ -6,7 +6,9 @@
   "author": "JoãovictorSC <jv140280@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev": "tsx watch src/server.ts",
+		"build": "tsup src --out-dir build",
+		"start": "node build/server.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
@@ -16,7 +18,10 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@prisma/client": "^5.14.0",
-    "express": "^4.19.2"
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.15.0",
+    "express": "^4.19.2",
+    "fastify": "^4.27.0",
+    "tsup": "^8.1.0"
   }
 }
